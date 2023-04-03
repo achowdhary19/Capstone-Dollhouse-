@@ -11,6 +11,8 @@ public class SpawnPlayer : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Sprite brotherSprite;
     public Sprite momSprite;
+    public Sprite dadSprite;
+    public Sprite sisterSprite;
 
     void Awake()
     {
@@ -39,12 +41,21 @@ public class SpawnPlayer : MonoBehaviour
         
             else if (SerialScript.Instance.PlayerName == "Brother")
             {
-                if (SerialScript.Instance.PlayerName == "Brother")
-                {
                     Debug.Log("this should be brother sprite");
                     spriteRenderer.sprite = brotherSprite;
-                }
             }
+            else if (SerialScript.Instance.PlayerName == "Sister")
+            {
+                Debug.Log("this should be sister sprite");
+                spriteRenderer.sprite = sisterSprite;
+            }
+            
+            else if (SerialScript.Instance.PlayerName == "Dad")
+            {
+                Debug.Log("this should be dad sprite");
+                spriteRenderer.sprite = dadSprite;
+            }  
+              
         }
         
     void AllowPlayerMove(){

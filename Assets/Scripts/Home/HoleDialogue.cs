@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,14 +16,15 @@ public class HoleDialogue : MonoBehaviour
     [SerializeField] private TextMeshProUGUI holeText;
 
     [Header("Buttons")]
-    [SerializeField] private GameObject momContinueButton;
+    [SerializeField] private GameObject ContinueButton;
+    /*
     [SerializeField] private GameObject brotherContinueButton;
+    */
     [SerializeField] private GameObject brotherYesButton;
     [SerializeField] private GameObject brotherNoButton;
     
     [Header("Animation Controller")]
-    [SerializeField] private Animator MomSpeechBubbleAnimator; 
-    [SerializeField] private Animator BrotherSpeechBubbleAnimator;
+    [SerializeField] private Animator SpeechBubbleAnimator; 
 
     [Header("UIAudioSource")] 
     [SerializeField] private AudioSource uIAudioSource; 
@@ -33,6 +35,8 @@ public class HoleDialogue : MonoBehaviour
     [SerializeField] private string[] momSentences;
     [TextArea]
     [SerializeField] private string[] brotherSentences;
+    [TextArea]
+    [SerializeField] private string[] sisterSentences;
     
     private int holeIndex;
   
@@ -84,25 +88,17 @@ public class HoleDialogue : MonoBehaviour
 
         if (inTriggerZone && Input.GetKeyDown(interactKey))
         {
-            Debug.Log("INteract key pressed ");
+            Debug.Log("Interact key pressed");
             StartCoroutine(StartDialogue());
         }
 
 
 
-        if (momContinueButton.activeSelf)
+        if (ContinueButton.activeSelf)
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                ContinueMomDialogue();
-            }
-        }
-        
-        if (brotherContinueButton.activeSelf)
-        {
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                ContinueBrotherDialogue();
+                ContinueButtonMethod();
             }
         }
     }
@@ -111,16 +107,30 @@ public class HoleDialogue : MonoBehaviour
         speechBubble.SetActive(true);
         if (SerialScript.Instance.PlayerName == "Mom")
         {
-            MomSpeechBubbleAnimator.SetTrigger("Open");
+            SpeechBubbleAnimator.SetTrigger("Open");
+            yield return new WaitForSeconds(speechBubbleAnimationDelay);
+            StartCoroutine(TypeMomDialogue());
+        }
+        
+        else if (SerialScript.Instance.PlayerName == "Dad")
+        {
+            SpeechBubbleAnimator.SetTrigger("Open");
             yield return new WaitForSeconds(speechBubbleAnimationDelay);
             StartCoroutine(TypeMomDialogue());
         }
        
         else if (SerialScript.Instance.PlayerName == "Brother")
         {
-            BrotherSpeechBubbleAnimator.SetTrigger("Open");
+            SpeechBubbleAnimator.SetTrigger("Open");
             yield return new WaitForSeconds(speechBubbleAnimationDelay);
             StartCoroutine(TypeBrotherDialogue());
+        }
+        
+        else if (SerialScript.Instance.PlayerName == "Sister")
+        {
+            SpeechBubbleAnimator.SetTrigger("Open");
+            yield return new WaitForSeconds(speechBubbleAnimationDelay);
+            StartCoroutine(TypeSisterDialogue());
         }
     }
     
@@ -131,7 +141,7 @@ public class HoleDialogue : MonoBehaviour
             holeText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
-        momContinueButton.SetActive(true); 
+        ContinueButton.SetActive(true); 
     }
     
     private IEnumerator TypeBrotherDialogue()
@@ -141,20 +151,53 @@ public class HoleDialogue : MonoBehaviour
             holeText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
-        brotherContinueButton.SetActive(true);
+        ContinueButton.SetActive(true);
         
         if (holeIndex >= brotherSentences.Length - 1) //if last sentence, which in brother case is a question. continue button OFF, yes/no ON 
         {
-            brotherContinueButton.SetActive(false);
+            ContinueButton.SetActive(false);
             brotherYesButton.SetActive(true);
             brotherNoButton.SetActive(true); 
         }
-        
-  
-
-        
     }
     
+    private IEnumerator TypeSisterDialogue()
+    {
+        foreach (char letter in sisterSentences[holeIndex].ToCharArray()) 
+        {
+            holeText.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+        ContinueButton.SetActive(true);
+        
+        if (holeIndex >= sisterSentences.Length - 1) //if last sentence, which in brother case is a question. continue button OFF, yes/no ON 
+        {
+            //brother and sister will share yes no continue button 
+            ContinueButton.SetActive(false);
+            brotherYesButton.SetActive(true);
+            brotherNoButton.SetActive(true); 
+        }
+    }
+    
+    
+    public void ContinueButtonMethod()
+    {
+        if (SerialScript.Instance.PlayerName == "Brother")
+        {
+            ContinueBrotherDialogue();
+        }
+        
+        else if (SerialScript.Instance.PlayerName == "Mom")
+        {
+            ContinueMomDialogue();
+        }
+        
+        else if (SerialScript.Instance.PlayerName == "Sister")
+        {
+            ContinueSisterDialogue();
+        }
+    }
+
     public void ContinueMomDialogue()
     {
         uIAudioSource.Play();
@@ -162,8 +205,8 @@ public class HoleDialogue : MonoBehaviour
         {
             holeText.text = string.Empty;
             holeIndex = 0; 
-            momContinueButton.SetActive(false);
-            MomSpeechBubbleAnimator.SetTrigger("Close");
+            ContinueButton.SetActive(false);
+            SpeechBubbleAnimator.SetTrigger("Close");
         }
 
         else  //else go to next sentence, empty the bubble, and type the next sentence 
@@ -176,7 +219,8 @@ public class HoleDialogue : MonoBehaviour
             }
         }
     }
-    
+
+
     public void ContinueBrotherDialogue()
     {
         uIAudioSource.Play();
@@ -184,12 +228,11 @@ public class HoleDialogue : MonoBehaviour
         {
             holeText.text = string.Empty;
             holeIndex = 0;
-            brotherContinueButton.SetActive(false);
+            ContinueButton.SetActive(false);
             brotherYesButton.SetActive(false);
             brotherNoButton.SetActive(false);
-
             
-            BrotherSpeechBubbleAnimator.SetTrigger("Close");
+            SpeechBubbleAnimator.SetTrigger("Close");
             
         }
         else //else go to next sentence, empty the bubble, and type the next sentence 
@@ -203,19 +246,55 @@ public class HoleDialogue : MonoBehaviour
         }
     }
     
+    public void ContinueSisterDialogue()
+    {
+        uIAudioSource.Play();
+        if (holeIndex >= sisterSentences.Length - 1) //if past last sentence index, empty reset close  
+        {
+            holeText.text = string.Empty;
+            holeIndex = 0;
+            ContinueButton.SetActive(false);
+            brotherYesButton.SetActive(false);
+            brotherNoButton.SetActive(false);
+            
+            SpeechBubbleAnimator.SetTrigger("Close");
+            
+        }
+        else //else go to next sentence, empty the bubble, and type the next sentence 
+        {
+            if (holeIndex < sisterSentences.Length - 1)
+            {
+                holeIndex++;
+                holeText.text = string.Empty;
+                StartCoroutine(TypeSisterDialogue());
+            }
+        }
+    }
+    
+
+    public void YesButtonMethod()
+    {
+        if (SerialScript.Instance.PlayerName == "Brother")
+        {
+            EnterHole();
+        }
+        
+        else if (SerialScript.Instance.PlayerName == "Sister")
+        {
+            SisterEnterHole();
+        }
+    }
+    
     public void EnterHole(){
         SceneManager.LoadScene("InsideHole");
         brotherYesButton.SetActive(false);
         brotherNoButton.SetActive(false); 
         Debug.Log("'trying to enter hole '");
     }
-
-    public void CloseBubble()
-    {
-        holeText.text = string.Empty;
-        holeIndex = 0; 
-        BrotherSpeechBubbleAnimator.SetTrigger("Close");
+    
+    public void SisterEnterHole(){
+        SceneManager.LoadScene("HoleTroll");
+        brotherYesButton.SetActive(false);
+        brotherNoButton.SetActive(false); 
     }
-
-  
 }

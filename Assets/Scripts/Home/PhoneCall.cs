@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PhoneCall : MonoBehaviour
 {
-    //This kind of works but i think the click interval 
+    //THIS WORKS BUT YOU HAVE TO HAVE THE PHONE CALL CONTAINER ON AT THE START OF THE GAME 
     public float ringInterval = 120f; // time interval in seconds between each ring
     public float clickInterval = 10f; // time interval in seconds to click the phone after it rings
 
@@ -22,9 +22,12 @@ public class PhoneCall : MonoBehaviour
     
     public KeyCode interactKey = KeyCode.E; // The key the player needs to press to interact
     private bool inTriggerZone = false; // Whether the player is in the trigger zone
+    
+    [SerializeField] private Animator PhoneMessageAnimator; 
+
 
     
-    private void OnTriggerEnter2D(Collider2D other)
+    /*private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
@@ -41,12 +44,12 @@ public class PhoneCall : MonoBehaviour
             inTriggerZone = false;
             //interactText.gameObject.SetActive(false);
         }
-    }
+    }*/
 
     private void Start()
     {
         PhoneMessage = GameObject.Find("PhoneCallContainer");
-        PhoneMessage.SetActive(false);
+       // PhoneMessage.SetActive(false);
     }
     
     private void Update()
@@ -82,12 +85,12 @@ public class PhoneCall : MonoBehaviour
     {
         yield return new WaitForSeconds(clickInterval);
 
-        // If the phone is still ringing, like the flag is true not that the audio is actually ringing 
+        // If 10 seconds has gone by and the phone is still ringing, like the flag is true not that the audio is actually ringing 
         if (isRinging)
         {
             Debug.Log("Timer up, nothing happens. ");
 
-            // Reset timer and isRinging flag
+            // then Reset timer and isRinging flag
             timer = 0f;
             isRinging = false;
         }
@@ -97,7 +100,7 @@ public class PhoneCall : MonoBehaviour
     private void PlayerInteract()
     {
 
-        TODO:  think this is where i need ot put the on mouse down stuff and call this in the wait for click function. 
+        //i think this is where i need ot put the on mouse down stuff and call this in the wait for click function. 
        uncomment this stuff out and edit it once i have a way to get upstairs. 
         if (inTriggerZone && Input.GetKeyDown(interactKey))
         {
@@ -115,7 +118,8 @@ public class PhoneCall : MonoBehaviour
         if (isRinging && timer < clickInterval)
         {
             //Debug.Log("Phone answered, do the special message.");
-            PhoneMessage.SetActive(true);
+            //PhoneMessage.SetActive(true);
+            PhoneMessageAnimator.SetTrigger("Open");
 
             // Reset timer and isRinging flag
             timer = 0f;
@@ -130,6 +134,9 @@ public class PhoneCall : MonoBehaviour
 
     public void CloseMessage()
     {
-        PhoneMessage.SetActive(false);
+       // PhoneMessage.SetActive(false);
+        PhoneMessageAnimator.SetTrigger("Close");
+
     }
+    
 }
