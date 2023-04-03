@@ -11,6 +11,9 @@
         },
         {
             "m_Id": "68d56be05212482492f4f6dfc81db570"
+        },
+        {
+            "m_Id": "ef16b090f9154103a2e0ecdbe59fdbd0"
         }
     ],
     "m_Keywords": [],
@@ -77,6 +80,9 @@
         },
         {
             "m_Id": "db217d8fab4245b199c055f859e2f3b6"
+        },
+        {
+            "m_Id": "1237a28fd0d246d180655bfb6a09789e"
         }
     ],
     "m_GroupDatas": [],
@@ -526,6 +532,41 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "1237a28fd0d246d180655bfb6a09789e",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -919.0,
+            "y": 919.0,
+            "width": 123.5,
+            "height": 34.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "dce0fab371b94e16b24d816f1ef993f7"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "ef16b090f9154103a2e0ecdbe59fdbd0"
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.BlockNode",
     "m_ObjectId": "13a0a103fc4147c69f65497d902381df",
     "m_Group": {
@@ -914,19 +955,11 @@
 }
 
 {
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.Rendering.BuiltIn.ShaderGraph.BuiltInLitSubTarget",
-    "m_ObjectId": "611230de657148bcb7ef8dcc700b173e",
-    "m_WorkflowMode": 1,
-    "m_NormalDropOffSpace": 0
-}
-
-{
     "m_SGVersion": 2,
     "m_Type": "UnityEditor.Rendering.BuiltIn.ShaderGraph.BuiltInTarget",
     "m_ObjectId": "6304c19cf5c147d3af37441cf6a9180c",
     "m_ActiveSubTarget": {
-        "m_Id": "611230de657148bcb7ef8dcc700b173e"
+        "m_Id": "7f5e766f17ea433d915910327a5cdd94"
     },
     "m_AllowMaterialOverride": false,
     "m_SurfaceType": 0,
@@ -1237,6 +1270,12 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.Rendering.BuiltIn.ShaderGraph.BuiltInUnlitSubTarget",
+    "m_ObjectId": "7f5e766f17ea433d915910327a5cdd94"
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalLitSubTarget",
     "m_ObjectId": "82003c76667e4f4c9f1a42c771b85938",
     "m_WorkflowMode": 1,
@@ -1389,6 +1428,9 @@
         },
         {
             "m_Id": "68d56be05212482492f4f6dfc81db570"
+        },
+        {
+            "m_Id": "ef16b090f9154103a2e0ecdbe59fdbd0"
         }
     ]
 }
@@ -1801,6 +1843,19 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
+    "m_ObjectId": "dce0fab371b94e16b24d816f1ef993f7",
+    "m_Id": 0,
+    "m_DisplayName": "_MainTex",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_BareResource": false
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.MultiplyNode",
     "m_ObjectId": "e378a7448a3c4e31a83a18e66e891449",
     "m_Group": {
@@ -1960,6 +2015,35 @@
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Texture2DShaderProperty",
+    "m_ObjectId": "ef16b090f9154103a2e0ecdbe59fdbd0",
+    "m_Guid": {
+        "m_GuidSerialized": "6e797a05-be5d-4be5-b647-8d74319264b6"
+    },
+    "m_Name": "_MainTex",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "_MainTex",
+    "m_DefaultReferenceName": "_MainTex",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": false,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": {
+        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+        "m_Guid": ""
+    },
+    "isMainTexture": false,
+    "useTilingAndOffset": false,
+    "m_Modifiable": true,
+    "m_DefaultType": 0
 }
 
 {
