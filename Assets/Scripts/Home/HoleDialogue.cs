@@ -17,9 +17,7 @@ public class HoleDialogue : MonoBehaviour
 
     [Header("Buttons")]
     [SerializeField] private GameObject ContinueButton;
-    /*
-    [SerializeField] private GameObject brotherContinueButton;
-    */
+   
     [SerializeField] private GameObject brotherYesButton;
     [SerializeField] private GameObject brotherNoButton;
     
@@ -65,16 +63,13 @@ public class HoleDialogue : MonoBehaviour
         }
     }
 
-    
-    
     void Start()
     {
         speechBubble = GameObject.Find("SpeechBubble");
         speechBubble.SetActive(false);
-        
-      
-        // StartCoroutine(OnMouseDown());
+        //StartCoroutine(OnMouseDown());
     }
+    
     /*void OnMouseDown()
     {
         Debug.Log("Mouse button clicked on player object");
@@ -91,8 +86,7 @@ public class HoleDialogue : MonoBehaviour
             Debug.Log("Interact key pressed");
             StartCoroutine(StartDialogue());
         }
-
-
+        
 
         if (ContinueButton.activeSelf)
         {

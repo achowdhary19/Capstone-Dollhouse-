@@ -45,6 +45,9 @@ TagManager:
   - name: Background
     uniqueID: 2240040957
     locked: 0
+  - name: BedroomWalls
+    uniqueID: 2988805995
+    locked: 0
   - name: Entities
     uniqueID: 263585865
     locked: 0
