@@ -24,6 +24,9 @@ public class PhoneCall : MonoBehaviour
     private bool inTriggerZone = false; // Whether the player is in the trigger zone
     
     [SerializeField] private Animator PhoneMessageAnimator; 
+    
+    [Header("Messages")]
+    [SerializeField] private List<string> phoneMessages = new List<string>();
 
 
     
@@ -75,6 +78,7 @@ public class PhoneCall : MonoBehaviour
         // Play phone ringing sound or animation
         uIAudioSource.Play();
         
+
         // next thing 
         StartCoroutine(WaitForClick());
 
@@ -93,6 +97,9 @@ public class PhoneCall : MonoBehaviour
             // then Reset timer and isRinging flag
             timer = 0f;
             isRinging = false;
+            
+            // Close the phone message display
+            PhoneMessageAnimator.SetTrigger("Close");
         }
     }
     
@@ -117,10 +124,15 @@ public class PhoneCall : MonoBehaviour
         // Check if the phone is ringing and the click is within clickInterval
         if (isRinging && timer < clickInterval)
         {
-            //Debug.Log("Phone answered, do the special message.");
-            //PhoneMessage.SetActive(true);
-            PhoneMessageAnimator.SetTrigger("Open");
+         
+            // Get a random message from the list
+            int randomIndex = Random.Range(0, phoneMessages.Count);
+            string message = phoneMessages[randomIndex];
 
+            // Set the message on the phone display
+            PhoneMessageAnimator.SetTrigger("Open");
+            PhoneMessageAnimator.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = message;
+            
             // Reset timer and isRinging flag
             timer = 0f;
             isRinging = false;

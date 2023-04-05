@@ -934,6 +934,7 @@ GameObject:
   m_Component:
   - component: {fileID: 116951752}
   - component: {fileID: 116951751}
+  - component: {fileID: 116951753}
   m_Layer: 0
   m_Name: desk
   m_TagString: Untagged
@@ -1008,6 +1009,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &116951753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116951750}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59909681f762c4b2ebffb694522d0ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openSprite: {fileID: 0}
+  closedSprite: {fileID: 0}
+  positionOffset: 0
+  open: {fileID: 0}
+  close: {fileID: 0}
 --- !u!1 &140279578
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,10 +1356,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Dear Friend,\n\nI wanted to give you a late birthday present. I know its
-    late, but I promise I didn't forget. I found this at an antique store and thought
-    of you. I remember you used to be fascinated with  t----, I'll never understand
-    it. \n\nEnjoy. "
+  m_text: "Dear Friend,\n\nI wanted to give you a birthday present. I know its late,
+    but I promise I didn't forget. I found this at an antique store and thought of
+    you. I remember you used to be fascinated with old lighters, evens ones that
+    had broken wheels. I'll never understand it. \n\nThis is the first time I've
+    been home in a few days. I keep seeing things at night. Doors opening, shadows
+    dancing. I've jsut been driving aroudn nad staying up. Hopefully there is nothing
+    ot be afraid of. \n\nTake care \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 386f07b66653b4c1795d1ff334983405, type: 2}
   m_sharedMaterial: {fileID: -99579814276761117, guid: 386f07b66653b4c1795d1ff334983405, type: 2}
@@ -1368,8 +1389,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1828,7 +1849,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The drop off has been made. You''ve been warned. '
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 386f07b66653b4c1795d1ff334983405, type: 2}
   m_sharedMaterial: {fileID: -99579814276761117, guid: 386f07b66653b4c1795d1ff334983405, type: 2}
@@ -8915,7 +8936,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &2037115000
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9097,6 +9118,12 @@ MonoBehaviour:
   uIAudioSource: {fileID: 2037115002}
   interactKey: 101
   PhoneMessageAnimator: {fileID: 1098120506}
+  phoneMessages:
+  - 'The drop off has been made. You''ve been warned. '
+  - 'Message2 '
+  - Message3
+  - Message4
+  - Message5
 --- !u!61 &2037115004
 BoxCollider2D:
   m_ObjectHideFlags: 0
