@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ComputerBrowser.unity
     guid: 5e90af960b66c4318b6ed8ef2ef56cb9
   - enabled: 1
-    path: Assets/Scenes/Diary.unity
+    path: Assets/Scenes/Diary2.unity
     guid: 9e1f7b687a6dd45e6b284a1706d53c5a
   - enabled: 1
     path: Assets/Scenes/HoleTroll.unity

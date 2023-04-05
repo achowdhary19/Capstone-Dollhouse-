@@ -35,24 +35,20 @@ public class SpawnPlayer : MonoBehaviour
         {
             if (SerialScript.Instance.PlayerName == "Mom")
             {
-                Debug.Log("this should be mome sprite");
                 spriteRenderer.sprite = momSprite;
             }
         
             else if (SerialScript.Instance.PlayerName == "Brother")
             {
-                    Debug.Log("this should be brother sprite");
                     spriteRenderer.sprite = brotherSprite;
             }
             else if (SerialScript.Instance.PlayerName == "Sister")
             {
-                Debug.Log("this should be sister sprite");
                 spriteRenderer.sprite = sisterSprite;
             }
             
             else if (SerialScript.Instance.PlayerName == "Dad")
             {
-                Debug.Log("this should be dad sprite");
                 spriteRenderer.sprite = dadSprite;
             }  
               
@@ -61,7 +57,6 @@ public class SpawnPlayer : MonoBehaviour
     void AllowPlayerMove(){
         if (SerialScript.Instance.HasScannedValid)
         {
-            Debug.Log("Welcome to the Dollhouse");
             Move.Instance.HandleMovement();
         }
     }

@@ -6,21 +6,25 @@ public class OpenFridge : MonoBehaviour
 {
     public Sprite openSprite;
     public Sprite closedSprite;
+    
     public float positionOffset; 
 
     private SpriteRenderer spriteRenderer;
     private bool isOpen = false;
     
     private Collider2D Collider;
-    
-    
-    
+
+
     [Header("UIAudioSource")] 
     [SerializeField] private AudioSource open; 
     [SerializeField] private AudioSource close; 
     
+    /*public GameObject mainCabinet; 
+    */
+    
     private void Start()
     {
+        
         spriteRenderer = GetComponent<SpriteRenderer>();
         Collider = GetComponent<Collider2D>();
 
@@ -28,22 +32,23 @@ public class OpenFridge : MonoBehaviour
 
     private void Update()
     {
-        if (!CharacterControl.Instance.m_Grounded)
-        {
-            Collider.enabled = false;
-        }
-        else
-        {
-            Collider.enabled = true;
-        }
+       
+        
     }
 
     private void OnMouseDown()
     {
         isOpen = !isOpen;
 
+        
         if (isOpen)
         {
+            
+                if (gameObject.name == "CabinetTop")
+                {
+                    GameObject mainCabinet = transform.parent.gameObject;
+                    mainCabinet.GetComponent<SpriteRenderer>().sprite = openSprite;
+                }
             
                 Vector3 furniturePosition = gameObject.transform.position;
                 furniturePosition.x += positionOffset;
@@ -56,6 +61,12 @@ public class OpenFridge : MonoBehaviour
         }
         else
         {
+            if (gameObject.name == "CabinetTop")
+            {
+                GameObject mainCabinet = transform.parent.gameObject;
+                mainCabinet.GetComponent<SpriteRenderer>().sprite = closedSprite;
+            }
+            
                 Vector3 furniturePosition = gameObject.transform.position;
                 furniturePosition.x -= positionOffset;
                 gameObject.transform.position = furniturePosition;
@@ -66,4 +77,5 @@ public class OpenFridge : MonoBehaviour
             
         }
     }
+    
 }
