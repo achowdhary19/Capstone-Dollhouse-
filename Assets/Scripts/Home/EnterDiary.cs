@@ -43,7 +43,7 @@ public class EnterDiary : MonoBehaviour
             
             else if (SerialScript.Instance.PlayerName == "Mom")
             {
-                Debug.Log("mom doesn't have a diary");
+                Debug.Log("Mom doesn't have a diary");
             }
         }
 

@@ -12,10 +12,7 @@ public class PhoneCall : MonoBehaviour
     private float timer = 0f; // keeps track of the time since the last phone ring
     private bool isRinging = false;
 
-    public static GameObject PhoneMessage;  
-    
-    [Header("Buttons")]
-    [SerializeField] private GameObject ContinueButton;
+    public static GameObject PhoneMessage;
 
     [Header("UIAudioSource")] 
     [SerializeField] private AudioSource uIAudioSource;
@@ -24,6 +21,7 @@ public class PhoneCall : MonoBehaviour
     private bool inTriggerZone = false; // Whether the player is in the trigger zone
     
     [SerializeField] private Animator PhoneMessageAnimator; 
+    [SerializeField] private Animator PhoneAnimator; 
     
     [Header("Messages")]
     [SerializeField] private List<string> phoneMessages = new List<string>();
@@ -75,15 +73,22 @@ public class PhoneCall : MonoBehaviour
         // Set isRinging flag to true
         isRinging = true;
         
+        StartCoroutine(StopAnimation());
         // Play phone ringing sound or animation
         uIAudioSource.Play();
+       
         
-
         // next thing 
         StartCoroutine(WaitForClick());
 
     }
 
+    private IEnumerator StopAnimation()
+    {
+        PhoneAnimator.SetBool("IsRinging", true);
+        yield return new WaitForSeconds(2.5f);
+        PhoneAnimator.SetBool("IsRinging", false);
+    } 
     private IEnumerator WaitForClick() 
     //Waits for the clickInterval seconds (10 s) or until the phone is clicked, whichever comes first, to check if the phone was answered 
     {
@@ -97,7 +102,7 @@ public class PhoneCall : MonoBehaviour
             // then Reset timer and isRinging flag
             timer = 0f;
             isRinging = false;
-            
+
             // Close the phone message display
             PhoneMessageAnimator.SetTrigger("Close");
         }
@@ -136,6 +141,7 @@ public class PhoneCall : MonoBehaviour
             // Reset timer and isRinging flag
             timer = 0f;
             isRinging = false;
+            PhoneAnimator.SetBool("IsRinging", false);
         }
         
         else   // If the phone is not ringing or the click is too late
