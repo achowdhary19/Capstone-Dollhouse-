@@ -31,11 +31,10 @@ public class LavaDialogue : MonoBehaviour
     private float speechBubbleAnimationDelay = 0.6f;
     void Start()
     { 
-        speechBubble = GameObject.Find("SpeechBubble");
-        speechBubble.SetActive(false);
+        /*speechBubble = GameObject.Find("SpeechBubble");
+        speechBubble.SetActive(false);*/
     }
 
-    // Update is called once per frame
     void Update()
     {
         

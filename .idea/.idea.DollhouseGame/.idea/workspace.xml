@@ -12,6 +12,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Decorations.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/LavaDialogue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Home/SpawnPlayer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/WindowDialogue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/polyMove.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -45,7 +46,7 @@
       <workItem from="1680627704175" duration="5634000" />
       <workItem from="1680641224508" duration="4462000" />
       <workItem from="1680660009597" duration="2788000" />
-      <workItem from="1680742065992" duration="6963000" />
+      <workItem from="1680742065992" duration="8900000" />
     </task>
     <servers />
   </component>
