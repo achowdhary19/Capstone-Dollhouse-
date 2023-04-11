@@ -47,7 +47,7 @@ public class LavaDialogue : MonoBehaviour
 
     IEnumerator StartDialogue()
     {
-        speechBubble.SetActive(true);
+        //speechBubble.SetActive(true);
         SpeechBubbleAnimator.SetTrigger("Open");
         yield return new WaitForSeconds(speechBubbleAnimationDelay);
         StartCoroutine(TypeDialogue());
