@@ -200,13 +200,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341110467}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.8806, y: -5.1905003, z: 0}
-  m_LocalScale: {x: 27.360882, y: 0.5989, z: 1}
+  m_LocalScale: {x: 27.36088, y: 0.5989, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!68 &341110470
 EdgeCollider2D:
@@ -230,6 +230,90 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!1 &608089447
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 608089448}
+  - component: {fileID: 608089449}
+  m_Layer: 0
+  m_Name: knob
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &608089448
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608089447}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.329, y: -0.011, z: 0}
+  m_LocalScale: {x: 0.2322533, y: 0.050191112, z: 0.7072}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1173418397}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &608089449
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608089447}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 263585865
+  m_SortingLayer: 3
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &807275740
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +482,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &878906523
 MonoBehaviour:
@@ -417,9 +501,145 @@ MonoBehaviour:
   ContinueButton: {fileID: 1953365289}
   SpeechBubbleAnimator: {fileID: 1123490922}
   dialogue:
-  - 'I tried to call you '
-  - 'It didn''t work. '
-  - 'I wish you came sooner. '
+  - You came back
+  - 'I found some pieces of glass that  I''ve been stringing together for a necklace
+    for you. '
+  - 'Its taking longer than I thought because the pieces keep cutting me. '
+  - 'I like how the pieces catch the light at certain angles. '
+  - "Anyway, I'm glad you came back. You\u2019re welcome to stay here as long as
+    you want.\n\nGoals for coming back after spring break  \n\n- ~~Take picture of
+    stickers/items in my house and use them as stickets~~\n- ~~Talk to julien about
+    the movement of the player im considering switching to top down game but thats
+    a big switch~~\n    - I want the player to be able to move across the plane,
+    I think\u2026.its also not that important. the interactions are whats important
+    but i still want smooth decent movement. I feel like the movement I want doesn\u2019t
+    need gravity and I\u2019m using an old character movement script that works but
+    doesn\u2019t really make sense in my case.\n- ~~research other creepy games and
+    narrow down how to achieve that creepy but also playful aesthetic that we are
+    aiming for.~~\n- ~~Give the characters a personality, a story~~\n    - ~~its
+    hard to find a seamless way to do that so I\u2019m looking to other games like
+    Buddy Simulator 1984 for inspiration~~\n- We have several themes(you can see
+    a recap of them at the bottom of [Week 10 ](https://www.notion.so/Week-10-8977b3fbce7c4071b4445565c5e75776))
+    After hearing all the feedback, I sense a disconnect of some confusion about
+    our why. We know its there its just really hard to express unless we\u2019re
+    asked about it. I\u2019m wondering how do we to express some of our hidden themes
+    like shared/used space and objects, ghostliness, and self-reflection without
+    putting it on a poster.\n- ~~Continue adding more interactions~~\n    - Girl
+    hole interaction - runs into some NPC who just starts dialogue and says \u201Cyou\u2019re
+    welcome to stay here as long as you want\u201D\n    - ~~Dad interaction with
+    hole should be the same as mom\u2019s~~\n    - ~~Add a book shelf or a diary,
+    maybe thats how the player backstory is told in the game.~~\n        - backstory
+    can be told through letters to the player, a diary,\n- ~~Take pictures of Dad
+    and girl sprites and add them to the scene~~\n- ~~Take pictures of more furniture
+    and add them to the assets folder.~~\n- Add a way to get upstairs\n- ~~Replace
+    click to interact with like spacebar or some other button when a player is close
+    enough~~\n- ~~Make the player ignore the box colliders on the furniture when
+    theyre not grounded.~~\n    - ~~Tweak their images and positions to make the
+    open/close cleaner~~\n\n# Progress\n\n### Thinking about our story, our theme\n\n-
+    Cade and I had an interesting conversation about about how we could somehow incorporate
+    the fact that these were my dolls that I played with when I was younger and now
+    i\u2019m playing with them as an adult and sharing them with everyone to play
+    with.\n- \u201Clife always has a way of bringing back parts of the past\u201D\n-
+    we could hide a touching memento to child-arfa or like somehow acknowledge these
+    are my dolls that i want to share.\n- it definitely relates to our theme about
+    shared space shared objects\n- The dolls backstories could be like who they were
+    to me when i was younger, but frankly I dont know what pesronalities I gave each
+    of them probably that the brother, Bob, and sister, People, were not friends
+    and fought a lot. Lol\u2026\n- During expert review, Zach was saying we need
+    to ground our project in our information, our story, our research, our theme,
+    really hone in on that. THIS IS HARD I STILL KINDA WANT TO ASK HIM HOW DO I SUCCESSFULLY
+    AND AESTHETICALLY DO THAT. When i asked him if we should express that like with
+    a complementary website or poster or somehting he said just be prepared to talk
+    about and have that conversation. Maybe our project is meant to bring out conversation.
+    It\u2019s way more valuable to have 2 way conversations about these things.\n\n###
+    Materials on 2d Sprites\n\n- There are lots of free textures online for walls,
+    carpets, wood floors, etc. that I would like to use in my game to give it more
+    life. I have experience using texture maps to create materials that I can place
+    on 3D objects, but never on 2D objects. It looks like a need a custom shader
+    to do it which I\u2019ve done some research on and have tried to make in shader
+    graph and in code, but I dont know how shaders well enough to continue working
+    on it. I think its because nothing i lit up in my scene because its 2d and I
+    haven\u2019t had added any light to it.\n- I wasted 5 hours today playing with
+    shaders to make it so that I could put texture maps on a 2d sprite but i realized
+    i can just download the sample image, rather than the individual texture maps,
+    and put that in the sprite renderer.  \U0001F9CD\u200D\u2642\uFE0FBut now the
+    house has 10 times more character and already looks creepier.\n\n### Player Movement\n\n-
+    I talked to Julien about fixing my player movement, I dont need to redo the whole
+    game in a isometric way like I thought, I just need to add some walls that give
+    the house more dimension and then remake the movement script to be 2.5 dimensional
+    so that the player can move left right and across the floor/plane.\n    \n   
+    ![Screen Shot 2023-03-30 at 9.27.41 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c1e08667-1f7b-4fff-abb2-f17115179f60/Screen_Shot_2023-03-30_at_9.27.41_PM.png)\n   
+    \n\nA stretch goal would be to make the player get smaller as they go towards
+    the back of the room, but I\u2019m not that concerned about it. What I want is
+    for the player to be able to move around the floor and to go in front of / behind
+    certain objects as they walk by. This is a common way to move a player, but my
+    biggest concern is the interactions with objects using this movement. Right now,
+    most  of the  objects are interactable using a mouse click, but I want the interactions
+    to be triggered when the player is close enough and presses the interact key.
+    This may be difficult with the new movement script, so I\u201Dm meeting with
+    Suibi, a grad student, on Friday to help me figure it out. \n\n# Player Backstory
+    Brainstorming\n\nMom \n\n~~The mother's strict adherence to rules and routine
+    stems from a desire to create a sense of order and control in a world that can
+    be chaotic and unpredictable.  She fears losing the stability she's created and
+    struggles to cope when things don't go as planned.~~\n\nDad\n\n- ~~A successful
+    businessman who has become increasingly distant from his family. He is grappling
+    with a secret addiction to gambling and has been embezzling money from his company
+    to support his habit.~~\n- The dad is caring, quiet, and paranoid. He\u2019s
+    been avoiding coming back home because he thinks he\u2019s seeing ghosts.\n   
+    - should there literally be ghosts like should i exaggerate that point or should
+    i just have boxes on things like \u201Cthis has been here for 3 years\u201D\n   
+    - ~~TODO desk opens and he says someone took my cigarettes.~~\n- ~~He has a mysterious
+    past that he refuses to talk about. His family suspects that he may have been
+    involved in some kind of criminal activity before they met.~~\n\nPeople\n\n-
+    **People is imaginative**, confident, youthful, loves herself, loves to dance,
+    pretty, happy, has an imaginary troll that she sneaks food to. I dont know if
+    he\u2019s imaginary or not, but i think he\u2019s nice. She feeds him because
+    hes her friend.\n- She likes bugs, flowers, dolls, toys\n- Some of her brother\u2019s
+    interests/tasts has rubbed off on her\n\n~~either she runs into the scary monster
+    and he\u2019s saying stuff like \u201Ccome back, stay a while, please come back\u201D~~
+    \n\n~~maybe in her diary entry she mentions her imaginary friend but she\u2019s
+    also/actually in the hole~~ \n\n~~She has a deep-seated fear of aging and losing
+    her beauty.~~\n\nBrother \n\n- He likes ghost stories\n- He has a lava lamp its
+    blue and green\n\nThis radio came with the house, I swear sometimes it just turns
+    on itself \n\nadd flowers to the kitchen table \n\nDad \n\n- The dad is quite
+    shy. And maybe unimaginative. He\u2019s kind. He doesn\u2019t do enough for himself.\n\nBrother
+    is magical \n\nsomene has to be magical! \n\nmaybe in the computer one of the
+    tabs is shopping, one of the tabs is something average neutral toned and the
+    other tab is like emily please come back in the hole i\u2019m lonely. \n\nafter
+    an afternoon of trapping, and killing, and disposing of mice, and scrubbing..
+    so much scrubbing.\n\nThere could be a missing doll that is found in the house
+    \n\nI need to add more. \n\nPeople are more likely to learn the story across
+    multiple things/over time rather than read one block of text. \n\ndad has a to
+    do list because he\u2019s bad at remembering \n\nif you dont embrace the ghosts
+    then you wont have fun. im runnigwith that a little. \n\n### Interactions i have
+    so far:\n\nI should add a radio! \n\nSister \n\n- Friend in the hole\n- A flippable
+    diary  with 4 pages\n- computer tabs\n\nDad \n\n- letter that he needs to mail
+    or he\u2019s recieving?\n- computer browser\n- Hole says no\n- Cigarettes in
+    the desk are gone.\n\nBrother \n\n- Can enter the hole and an eye follows him
+    - i dont know how much i like that.\n- Lava lamp\n\nMother \n\n- hole says no\n-
+    cigarettes in desk TODO\n\nEveryone \n\n- Answer the phone , it has 5 messsages
+    it shuffles through. ****\n- Open furniture\n\nmaybe even some objects just say
+    \u201Cthis was here when they moved in\u201D\n\nquestions for julien \n\ni keep
+    getting an error about saving objects in the background, not allowed, etc. \n\nalso
+    should i switch editor versions? is it safe? is it worth it like will it make
+    any difference? \n\nquestions for annie or any expert \n\nif the stories of the
+    characters don\u2019t relate to the theme of our game. is that confusing? \n\nok
+    so what about the fact that no one is going to see \u201Can ending\u201D so i
+    shouldnt make an ending or something \n\nother thinking. \n\nmaybe every subsequent
+    user has \u201Cjust moved in \u201C \n\nwhy am i so obsessed with this space
+    and sharing thnig like i dont know that it needs otb e about that. \n\ni dont
+    feel like this is mine. \n\nmaybe its a this isn\u2019t my home but im going
+    to do what i can to make it my home, kinda what you have to do all the time .
+    this isn\u2019t mine but im going to do what i can do make it mine.  \n\n# IM
+    WONDERING \u2026 SHOULD EACH HOME SCENE BE DIFFErENT FOR EACH PLAYER WHEN THE
+    SPAWN IN? OR JUST THE INTERACTIONS ARE DIFERENT!???!!?\n\nis our point to extend
+    play meaning you can learn more about the players in the digital game or is our
+    point to talk about ghost space. \n\nmaybe each player has like their token ikon
+    like a heart for the girl, dad\u2019s is a tree, boys is a piece of hickcen,
+    moms is a music note. \n\ntalking to annie \n\nwhat if ... in your artist statement
+    about physical world is like showing that this extension of reality of physical
+    reality \n\n\u201Cextending what is posisbe for humans\u201D it is playful but
+    it is scary \n\nartist statemet and theme of the game"
   interactKey: 101
 --- !u!61 &878906524
 BoxCollider2D:
@@ -471,7 +691,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965237080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 6.64, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -536,7 +756,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2093998699
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: de36d8aef38294ace823efb2faea6551, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -557,8 +777,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123490919}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.1182, y: 0.7194, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: -4.68, y: 3.03, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1400129692}
@@ -585,6 +805,131 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1173418393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1173418397}
+  - component: {fileID: 1173418396}
+  - component: {fileID: 1173418395}
+  - component: {fileID: 1173418394}
+  m_Layer: 0
+  m_Name: Door
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1173418394
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173418393}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &1173418395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173418393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1502adbaf9666429da23d8bede4d0202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!212 &1173418396
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173418393}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 263585865
+  m_SortingLayer: 3
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1173418397
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173418393}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.9408, y: -3.3018, z: 0}
+  m_LocalScale: {x: 1.7984, y: 2.7165, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 608089448}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1238335298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,7 +1378,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: ...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1068,7 +1413,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1147,8 +1492,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.76, y: 0.11}
   m_AnchorMax: {x: 1, y: 0.15}
-  m_AnchoredPosition: {x: -7.5, y: 0}
-  m_SizeDelta: {x: -15, y: 30}
+  m_AnchoredPosition: {x: -8.900009, y: 0.000015258789}
+  m_SizeDelta: {x: -46.19, y: 18.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1953365291
 MonoBehaviour:

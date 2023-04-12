@@ -7,7 +7,6 @@ using UnityEngine.EventSystems;
 
 public class BearDialogue : MonoBehaviour
 {
-    public static GameObject speechBubble; 
     
     [SerializeField] private float typingSpeed = 0.05f;
 
@@ -46,8 +45,8 @@ public class BearDialogue : MonoBehaviour
     
     void OnMouseDown()
     {
-        if(EventSystem.current.IsPointerOverGameObject())
-            return;
+        /*if(EventSystem.current.IsPointerOverGameObject())
+            return;*/
         StartCoroutine(StartDialogue());
     }
 

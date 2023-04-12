@@ -5,7 +5,7 @@ using UnityEngine;
 using TMPro; 
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
-
+//FOR THIS TO WORK: container scale 1 1 1, speech bubble  0 0 0 
 public class HoleDialogue : MonoBehaviour
 {
     public static GameObject speechBubble; 
