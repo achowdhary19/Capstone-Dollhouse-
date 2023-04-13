@@ -6,6 +6,8 @@ public class OpenFridge : MonoBehaviour
 {
     public Sprite openSprite;
     public Sprite closedSprite;
+
+    private GameObject cigarettes;
     
     public float positionOffset; 
 
@@ -24,6 +26,15 @@ public class OpenFridge : MonoBehaviour
     
     private void Start()
     {
+        
+        // Get a reference to the cigarettes GameObject using Transform.Find()
+        if (gameObject.name == "Desk")
+        {
+            cigarettes = transform.Find("Cigarettes").gameObject;
+            // Turn off the cigarettes by default
+            cigarettes.SetActive(false);
+        }
+        
         
         spriteRenderer = GetComponent<SpriteRenderer>();
         Collider = GetComponent<Collider2D>();
@@ -49,7 +60,13 @@ public class OpenFridge : MonoBehaviour
                     GameObject mainCabinet = transform.parent.gameObject;
                     mainCabinet.GetComponent<SpriteRenderer>().sprite = openSprite;
                 }
-            
+
+
+                if (gameObject.name == "Desk")
+                {
+                    cigarettes.SetActive(true);
+                }
+                
                 Vector3 furniturePosition = gameObject.transform.position;
                 furniturePosition.x += positionOffset;
                 gameObject.transform.position = furniturePosition;
@@ -65,6 +82,11 @@ public class OpenFridge : MonoBehaviour
             {
                 GameObject mainCabinet = transform.parent.gameObject;
                 mainCabinet.GetComponent<SpriteRenderer>().sprite = closedSprite;
+            }
+            
+            if (gameObject.name == "Desk")
+            {
+                cigarettes.SetActive(false);
             }
             
                 Vector3 furniturePosition = gameObject.transform.position;

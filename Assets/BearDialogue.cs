@@ -45,7 +45,7 @@ public class BearDialogue : MonoBehaviour
     
     void OnMouseDown()
     {
-        /*if(EventSystem.current.IsPointerOverGameObject())
+        Debug.Log("trying to press");/*if(EventSystem.current.IsPointerOverGameObject())
             return;*/
         StartCoroutine(StartDialogue());
     }
