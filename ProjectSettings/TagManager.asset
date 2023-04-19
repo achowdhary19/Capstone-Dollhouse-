@@ -57,6 +57,9 @@ TagManager:
   - name: SmallObjects
     uniqueID: 4159072931
     locked: 0
+  - name: Player
+    uniqueID: 2370976743
+    locked: 0
   - name: UI
     uniqueID: 2093998699
     locked: 0
