@@ -25,6 +25,16 @@ public class Decorations : MonoBehaviour
         {
             DadDecorations.SetActive(true);
         }
+        
+        if (SerialScript.Instance.PlayerName == "Sister")
+        {
+            SisterDecorations.SetActive(true);
+        }
+        
+        if (SerialScript.Instance.PlayerName == "Mom")
+        {
+            MomDecorations.SetActive(true);
+        }
     }
 
     // Update is called once per frame

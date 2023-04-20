@@ -27,8 +27,8 @@ public class SpawnPlayer : MonoBehaviour
 
     void Update()
     {
-        ChangeSprite(); //this works, only issue is that the ground and ceiling oclliders stay the same whihc is only a problem if our sprites are differnet sizes. Not a huge problem. 
-        AllowPlayerMove(); 
+        ChangeSprite(); 
+        //AllowPlayerMove(); 
     }
     
     void ChangeSprite()
@@ -54,11 +54,11 @@ public class SpawnPlayer : MonoBehaviour
               
         }
         
-    void AllowPlayerMove(){
+    /*void AllowPlayerMove(){
         if (SerialScript.Instance.HasScannedValid)
         {
             Move.Instance.HandleMovement();
         }
-    }
+    }*/
     
 }

@@ -66,3 +66,6 @@ TagManager:
   - name: RealUI
     uniqueID: 2418407749
     locked: 0
+  - name: Stairs
+    uniqueID: 567318371
+    locked: 0
