@@ -26,26 +26,7 @@ public class PhoneCall : MonoBehaviour
     [Header("Messages")]
     [SerializeField] private List<string> phoneMessages = new List<string>();
 
-
     
-    /*private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            inTriggerZone = true;
-            Debug.Log("player in trigger zone");
-            //interactText.gameObject.SetActive(true);
-        }
-    }
-    
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            inTriggerZone = false;
-            //interactText.gameObject.SetActive(false);
-        }
-    }*/
 
     private void Start()
     {
