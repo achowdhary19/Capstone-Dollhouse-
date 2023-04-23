@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3986407923185954520}
   - component: {fileID: 3986407923185954523}
   - component: {fileID: 7168368937322770763}
+  - component: {fileID: 8707201483722419524}
   m_Layer: 0
   m_Name: PlayerTest 1
   m_TagString: Untagged
@@ -127,10 +128,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f189c5d9e9a48efb44c35b57a37317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followSpot: {x: 0, y: 0}
   rb: {fileID: 3986407923185954525}
   perspectiveScale: 0.25
   scaleRatio: 0.1
   speed: 17.26
+  animator: {fileID: 0}
+  inDialogue: 0
 --- !u!195 &3986407923185954520
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -180,14 +184,37 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3986407923185954514}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08347cf23bbe1441bb04b63dc170f029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPos: {fileID: 0}
   spriteRenderer: {fileID: 3986407923185954527}
   brotherSprite: {fileID: 21300000, guid: ef34609e7c28747ca9bbbfbb6528eef5, type: 3}
   momSprite: {fileID: 21300000, guid: f32efad82b32340fb82be2f8750599ee, type: 3}
   dadSprite: {fileID: 21300000, guid: fa709e9ba8a3547219cdc04ca9185c3a, type: 3}
   sisterSprite: {fileID: 21300000, guid: 3d3e614186abf49ae9aa5c89024282fd, type: 3}
+--- !u!114 &8707201483722419524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3986407923185954514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf7150ab8f072465faa9c48f33a6bfa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  brotherSprite: {fileID: 21300000, guid: ef34609e7c28747ca9bbbfbb6528eef5, type: 3}
+  momSprite: {fileID: 21300000, guid: f32efad82b32340fb82be2f8750599ee, type: 3}
+  dadSprite: {fileID: 21300000, guid: fa709e9ba8a3547219cdc04ca9185c3a, type: 3}
+  sisterSprite: {fileID: 21300000, guid: 3d3e614186abf49ae9aa5c89024282fd, type: 3}
+  followSpot: {x: 0, y: 0}
+  rb: {fileID: 3986407923185954525}
+  perspectiveScale: 0.25
+  scaleRatio: 0.1
+  speed: 17.26
+  animator: {fileID: 3986407923185954523}
+  inDialogue: 0

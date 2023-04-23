@@ -1,22 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 using UnityEngine.AI;
 
-public class Target : MonoBehaviour
+public class PointClickSpawn : MonoBehaviour
 {
-    
-    /*
     [Header("Other sprites")] 
     public SpriteRenderer spriteRenderer;
     public Sprite brotherSprite;
     public Sprite momSprite;
     public Sprite dadSprite;
-    public Sprite sisterSprite;*/
-    
-    
-    
+    public Sprite sisterSprite;
     
     public Vector2 followSpot;
     public Rigidbody2D rb;
@@ -26,13 +20,15 @@ public class Target : MonoBehaviour
 
     public Animator animator; 
 
+    
     private NavMeshAgent agent;
-
-    private SpriteRenderer spriteRenderer;
-
+    
     public bool inDialogue; 
+    
     void Start()
     {
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        
         //tell folow spot to be where the player is right now 
         followSpot = transform.position;
         
@@ -41,12 +37,12 @@ public class Target : MonoBehaviour
         agent.updateUpAxis = false;
 
         animator = GetComponent<Animator>(); 
-        spriteRenderer = GetComponent<SpriteRenderer>(); 
+        ChangeSprite();
     }
 
-   
     void Update()
     {
+
         if (!inDialogue)
         {
             var mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -62,7 +58,29 @@ public class Target : MonoBehaviour
         //AdjustPerspective();
     }
     
-
+    void ChangeSprite()
+    {
+        if (SerialScript.Instance.PlayerName == "Mom")
+        {
+            spriteRenderer.sprite = momSprite;
+        }
+        
+        else if (SerialScript.Instance.PlayerName == "Brother")
+        {
+            spriteRenderer.sprite = brotherSprite;
+        }
+        else if (SerialScript.Instance.PlayerName == "Sister")
+        {
+            spriteRenderer.sprite = sisterSprite;
+        }
+            
+        else if (SerialScript.Instance.PlayerName == "Dad")
+        {
+            spriteRenderer.sprite = dadSprite;
+        }  
+              
+    }
+    
     private void UpdateAnimation()
     {
         //Determines the angle between where we clicked on the screen and our player 
@@ -87,6 +105,7 @@ public class Target : MonoBehaviour
     {
         inDialogue = false;
     }
+    
     private void AdjustPerspective()
     {
         Vector3 scale = transform.localScale;

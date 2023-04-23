@@ -6,7 +6,7 @@ namespace Assets
     {
         // Start is called before the first frame update
     
-        public GameObject Panel ;
+        public GameObject Panel;
         
         public void CloseBrowser()
         {

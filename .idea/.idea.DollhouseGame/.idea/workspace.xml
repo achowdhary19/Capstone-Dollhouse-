@@ -8,6 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Fungus/Scripts/EventHandlers/MonoBehaviour/PointClickSpawn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Home/SpawnPlayer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -51,7 +52,8 @@
       <workItem from="1681793565293" duration="4351000" />
       <workItem from="1681852904634" duration="8657000" />
       <workItem from="1681882872681" duration="543000" />
-      <workItem from="1681955757541" duration="6804000" />
+      <workItem from="1681955757541" duration="7085000" />
+      <workItem from="1682191886908" duration="3024000" />
     </task>
     <servers />
   </component>
