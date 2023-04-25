@@ -60,6 +60,12 @@ public class OpenFridge : MonoBehaviour
                     GameObject mainCabinet = transform.parent.gameObject;
                     mainCabinet.GetComponent<SpriteRenderer>().sprite = openSprite;
                 }
+                
+                if (gameObject.name == "ClosetDrawer")
+                {
+                    GameObject mainCloset = transform.parent.gameObject;
+                    mainCloset.GetComponent<SpriteRenderer>().sprite = openSprite;
+                }
 
 
                 if (gameObject.name == "Desk")
@@ -82,6 +88,12 @@ public class OpenFridge : MonoBehaviour
             {
                 GameObject mainCabinet = transform.parent.gameObject;
                 mainCabinet.GetComponent<SpriteRenderer>().sprite = closedSprite;
+            }
+            
+            if (gameObject.name == "ClosetDrawer")
+            {
+                GameObject mainCloset = transform.parent.gameObject;
+                mainCloset.GetComponent<SpriteRenderer>().sprite = closedSprite;
             }
             
             if (gameObject.name == "Desk")
