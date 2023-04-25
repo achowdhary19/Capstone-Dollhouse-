@@ -57,26 +57,21 @@ public class TrollDialogue : MonoBehaviour
 
     void Update()
     {
-        if (inTriggerZone && Input.GetKeyDown(interactKey))
+        if (inTriggerZone && Input.GetMouseButtonDown(0))
         {
             StartCoroutine(StartDialogue());
         }
         
         if (ContinueButton.activeSelf)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetMouseButtonDown(0))
             {
               ContinueDialogue();
             }
         }
         
     }
-
-    /*void OnMouseDown()
-    {
-        Debug.Log("starting dalog");
-        StartCoroutine(StartDialogue());
-    }*/
+    
     public IEnumerator StartDialogue()
     {
         speechBubble.SetActive(true);

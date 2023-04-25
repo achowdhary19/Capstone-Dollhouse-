@@ -6,6 +6,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 //FOR THIS TO WORK: container scale 1 1 1, speech bubble  0 0 0 
+//IF I WANT TO USE THE iN TRIGGER ZONE< MAKe sure player is tagged player and has a box collider 
 public class HoleDialogue : MonoBehaviour
 {
     public static GameObject speechBubble; 
@@ -40,16 +41,14 @@ public class HoleDialogue : MonoBehaviour
   
     private float speechBubbleAnimationDelay = 0.6f;
     
-    public KeyCode interactKey = KeyCode.E; // The key the player needs to press to interact
+    //public KeyCode interactKey = KeyCode.E; // The key the player needs to press to interact
     private bool inTriggerZone = false; // Whether the player is in the trigger zone
-
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             inTriggerZone = true;
-            Debug.Log("player in trigger zone");
             //interactText.gameObject.SetActive(true);
         }
     }
@@ -63,34 +62,36 @@ public class HoleDialogue : MonoBehaviour
         }
     }
 
+
     void Start()
     {
         speechBubble = GameObject.Find("SpeechBubble");
         speechBubble.SetActive(false);
-        //StartCoroutine(OnMouseDown());
+        /*StartCoroutine(OnMouseDown());*/
     }
     
-    /*void OnMouseDown()
+    /*
+    void OnMouseDown()
     {
         Debug.Log("Mouse button clicked on player object");
         StartCoroutine(StartDialogue());
-    }*/
+    }
+    */
     
     
 
     void Update() //player can press enter button to continue dialogue. 
     {
-
-        if (inTriggerZone && Input.GetKeyDown(interactKey))
+        
+        if (inTriggerZone && Input.GetMouseButtonDown(0))
         {
             Debug.Log("Interact key pressed");
             StartCoroutine(StartDialogue());
         }
         
-
         if (ContinueButton.activeSelf)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetMouseButtonDown(0))
             {
                 ContinueButtonMethod();
             }
@@ -281,8 +282,8 @@ public class HoleDialogue : MonoBehaviour
     
     public void EnterHole(){
         SceneManager.LoadScene("InsideHole");
-        brotherYesButton.SetActive(false);
-        brotherNoButton.SetActive(false); 
+        /*brotherYesButton.SetActive(false);
+        brotherNoButton.SetActive(false); */
         Debug.Log("'trying to enter hole '");
     }
     
