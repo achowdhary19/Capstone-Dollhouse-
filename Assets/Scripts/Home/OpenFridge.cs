@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Fungus;
 using UnityEngine;
 
 public class OpenFridge : MonoBehaviour
@@ -16,6 +17,7 @@ public class OpenFridge : MonoBehaviour
     
     private Collider2D Collider;
 
+    public Flowchart flowchart; 
 
     [Header("UIAudioSource")] 
     [SerializeField] private AudioSource open; 
@@ -66,6 +68,11 @@ public class OpenFridge : MonoBehaviour
                     GameObject mainCloset = transform.parent.gameObject;
                     mainCloset.GetComponent<SpriteRenderer>().sprite = openSprite;
                 }
+                
+                if (gameObject.name == "ClosetCabinet")
+                {
+                    StartCoroutine(StartDialogue());
+                }
 
 
                 if (gameObject.name == "Desk")
@@ -110,6 +117,12 @@ public class OpenFridge : MonoBehaviour
                 
             
         }
+    }
+
+    IEnumerator StartDialogue()
+    {
+        yield return new WaitForSeconds(2f);
+        flowchart.SetBooleanVariable("closetOpen", true);
     }
     
 }

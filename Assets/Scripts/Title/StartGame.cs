@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Fungus;
 using JetBrains.Annotations;
 using UnityEditor.PackageManager;
 using UnityEngine;
@@ -8,12 +9,14 @@ using UnityEngine.SceneManagement;
 public class StartGame : MonoBehaviour
 {
     private bool sceneLoaded = false; // Flag to keep track of whether the (main)scene has been loaded
+    public Flowchart flowchart; 
     
     [Header("UIAudioSource")] 
     [SerializeField] private AudioSource error;
 
     void Start()
     {
+        flowchart.SetBooleanVariable("loadLevel", false);
     }
 
     void Update()
@@ -22,7 +25,10 @@ public class StartGame : MonoBehaviour
         {
             if (SerialScript.Instance.HasScannedValid) 
             {
+                
                 LoadLevel();
+               //flowchart.SetBooleanVariable("loadLevel", false);
+
             
                 // Set the flag to true so the scene is only loaded once
                 sceneLoaded = true;

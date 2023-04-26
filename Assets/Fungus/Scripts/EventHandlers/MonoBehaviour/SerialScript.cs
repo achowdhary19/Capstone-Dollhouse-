@@ -5,6 +5,7 @@ using UnityEngine;
 using System.IO.Ports;
 // using UnityEngine.UI;
 using System.Threading;
+using Fungus;
 
 public class SerialScript : MonoBehaviour
 {
@@ -12,7 +13,9 @@ public class SerialScript : MonoBehaviour
     public string id;
     public string PlayerName; 
     public bool HasScannedValid;
-    
+
+
+
 
     private string[] VALID_TAGS = {"60007825C9F4", "6000781F5156", "600079122A21",  "600078ECA551"}; //RFID TAGS HERE, HEX VALUE 
     private Dictionary<string, string> PlayerMap; 

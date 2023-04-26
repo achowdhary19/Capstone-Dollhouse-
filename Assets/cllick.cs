@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class EnterHole : MonoBehaviour
+public class cllick : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,10 +14,5 @@ public class EnterHole : MonoBehaviour
     void Update()
     {
         
-    }
-    
-    public void EnterTheHole(){
-        SceneManager.LoadScene("HoleTroll");
-        Debug.Log("'trying to enter hole '");
     }
 }
