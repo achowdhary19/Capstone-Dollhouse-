@@ -49,19 +49,37 @@ public class OpenFridge : MonoBehaviour
         
     }
 
-    private void OnMouseDown()
+    public void OpenThing()
     {
         isOpen = !isOpen;
 
         
         if (isOpen)
         {
-            
+                if (gameObject.name == "Stove")
+                {
+                    flowchart.SetBooleanVariable("stoveOpen", true);
+                }
+                
+                if (gameObject.name == "Cabinet")
+                {
+                    flowchart.SetBooleanVariable("cabinetOpen", true);
+                }
+               
                 if (gameObject.name == "CabinetTop")
                 {
+                    flowchart.SetBooleanVariable("cabinetTop", true);
                     GameObject mainCabinet = transform.parent.gameObject;
                     mainCabinet.GetComponent<SpriteRenderer>().sprite = openSprite;
                 }
+                
+                if (gameObject.name == "Fridge")
+                {
+                    flowchart.SetBooleanVariable("fridgeOpen", true);
+                }
+                
+                
+                
                 
                 if (gameObject.name == "ClosetDrawer")
                 {
@@ -79,6 +97,8 @@ public class OpenFridge : MonoBehaviour
                 {
                     cigarettes.SetActive(true);
                 }
+
+                
                 
                 Vector3 furniturePosition = gameObject.transform.position;
                 furniturePosition.x += positionOffset;
@@ -86,15 +106,30 @@ public class OpenFridge : MonoBehaviour
                 
                 spriteRenderer.sprite = openSprite;
                 open.Play();
-                
-            
         }
+        
         else
         {
+            if (gameObject.name == "Stove")
+            {
+                flowchart.SetBooleanVariable("stoveOpen", false);
+            }
+            
+            if (gameObject.name == "Cabinet")
+            {
+                flowchart.SetBooleanVariable("cabinetOpen", false);
+            }
+            
             if (gameObject.name == "CabinetTop")
             {
+                flowchart.SetBooleanVariable("cabinetTop", false);
                 GameObject mainCabinet = transform.parent.gameObject;
                 mainCabinet.GetComponent<SpriteRenderer>().sprite = closedSprite;
+            }
+            
+            if (gameObject.name == "Fridge")
+            {
+                flowchart.SetBooleanVariable("fridgeOpen", false);
             }
             
             if (gameObject.name == "ClosetDrawer")
@@ -107,15 +142,12 @@ public class OpenFridge : MonoBehaviour
             {
                 cigarettes.SetActive(false);
             }
-            
-                Vector3 furniturePosition = gameObject.transform.position;
+            Vector3 furniturePosition = gameObject.transform.position;
                 furniturePosition.x -= positionOffset;
                 gameObject.transform.position = furniturePosition;
                 
                 spriteRenderer.sprite = closedSprite;
                 close.Play();
-                
-            
         }
     }
 
