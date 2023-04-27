@@ -79,17 +79,17 @@ public class OpenFridge : MonoBehaviour
                 }
                 
                 
-                
-                
                 if (gameObject.name == "ClosetDrawer")
                 {
+                    flowchart.SetBooleanVariable("closetDrawer", true);
                     GameObject mainCloset = transform.parent.gameObject;
                     mainCloset.GetComponent<SpriteRenderer>().sprite = openSprite;
                 }
                 
                 if (gameObject.name == "ClosetCabinet")
                 {
-                    StartCoroutine(StartDialogue());
+                    flowchart.SetBooleanVariable("closetCabinet", true);
+                    //StartCoroutine(StartDialogue());
                 }
 
 
@@ -132,8 +132,15 @@ public class OpenFridge : MonoBehaviour
                 flowchart.SetBooleanVariable("fridgeOpen", false);
             }
             
+            if (gameObject.name == "ClosetCabinet")
+            {
+                flowchart.SetBooleanVariable("closetCabinet", false);
+            }
+            
+            
             if (gameObject.name == "ClosetDrawer")
             {
+                flowchart.SetBooleanVariable("closetDrawer", false);
                 GameObject mainCloset = transform.parent.gameObject;
                 mainCloset.GetComponent<SpriteRenderer>().sprite = closedSprite;
             }
