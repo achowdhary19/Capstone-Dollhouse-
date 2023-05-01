@@ -18,7 +18,6 @@ public class PhoneCall : MonoBehaviour
     [SerializeField] private AudioSource uIAudioSource;
     
     public KeyCode interactKey = KeyCode.E; // The key the player needs to press to interact
-    private bool inTriggerZone = false; // Whether the player is in the trigger zone
     
     [SerializeField] private Animator PhoneMessageAnimator; 
     [SerializeField] private Animator PhoneAnimator; 
@@ -31,7 +30,6 @@ public class PhoneCall : MonoBehaviour
     private void Start()
     {
         PhoneMessage = GameObject.Find("PhoneCallContainer");
-       // PhoneMessage.SetActive(false);
     }
     
     private void Update()

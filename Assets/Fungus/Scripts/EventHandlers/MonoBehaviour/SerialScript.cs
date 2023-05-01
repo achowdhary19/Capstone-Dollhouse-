@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO.Ports;
-// using UnityEngine.UI;
 using System.Threading;
 using Fungus;
 
@@ -13,10 +12,7 @@ public class SerialScript : MonoBehaviour
     public string id;
     public string PlayerName; 
     public bool HasScannedValid;
-
-
-
-
+    
     private string[] VALID_TAGS = {"60007825C9F4", "6000781F5156", "600079122A21",  "600078ECA551"}; //RFID TAGS HERE, HEX VALUE 
     private Dictionary<string, string> PlayerMap; 
     SerialPort serialPort;
@@ -42,16 +38,15 @@ public class SerialScript : MonoBehaviour
     
     void Start()
     {
-        //sometimes this port name/path needs to be changed /dev/tty.usbmodem14101
+        //sometimes this port name needs to be changed /dev/tty.usbmodem14101
         serialPort = new SerialPort("/dev/tty.usbmodem14201", 9600);
 
         if (!serialPort.IsOpen)
         {
-            print("Opening /dev/tty.usbmodem14201 baud 9600"); 
             serialPort.Open();
             
             serialPort.NewLine = "\r\n";
-            if (serialPort.IsOpen) { print("Opened port!!!!"); }
+            if (serialPort.IsOpen) { print("Opened port!"); }
         }
         
         //holding a string data  
@@ -64,17 +59,16 @@ public class SerialScript : MonoBehaviour
         while(true) {
             string serialData = serialPort.ReadLine();
             
-            //Debug.Log("Something" + serialPort.ReadChar()); //testing, 
             id = serialData;
-            Debug.Log("Read From Arduino: " + serialData);
+          //  Debug.Log("Read From Arduino: " + serialData);
 
             string result = "";
             if (PlayerMap.TryGetValue(id, out result))
             {
                 PlayerName = result; 
             } 
-            //now i can access instance.playername. if instance.player name == this, do this. 
             
+            //now i can access instance.playername. if instance.playername == this, do this. 
             Debug.Log(PlayerName); 
             foreach (string testTag in VALID_TAGS)
             {
@@ -89,5 +83,17 @@ public class SerialScript : MonoBehaviour
     {
         serialPort.Close(); 
         Debug.Log("Closed port");
+    }
+
+    void OnApplicationQuit()
+    {
+        StopThread();
+    }
+
+    public void StopThread()
+    {
+        Debug.Log("Stop");
+        serialPort.Close();
+        t.Abort();
     }
 }

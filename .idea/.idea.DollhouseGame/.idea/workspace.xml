@@ -10,6 +10,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Fungus/Scripts/EventHandlers/MonoBehaviour/PointClickSpawn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/LevelLoader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/RESTARTGAME.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Home/SpawnPlayer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -58,7 +59,9 @@
       <workItem from="1682277845971" duration="3143000" />
       <workItem from="1682398637072" duration="723000" />
       <workItem from="1682485019037" duration="3771000" />
-      <workItem from="1682544479505" duration="3523000" />
+      <workItem from="1682544479505" duration="4201000" />
+      <workItem from="1682617698031" duration="6874000" />
+      <workItem from="1682894978622" duration="3684000" />
     </task>
     <servers />
   </component>

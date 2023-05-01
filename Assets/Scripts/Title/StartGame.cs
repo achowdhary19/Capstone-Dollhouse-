@@ -13,10 +13,14 @@ public class StartGame : MonoBehaviour
     
     [Header("UIAudioSource")] 
     [SerializeField] private AudioSource error;
+    
+    public Animator transition;
+
+    public float transitionTime = 1f;
 
     void Start()
     {
-        flowchart.SetBooleanVariable("loadLevel", false);
+        
     }
 
     void Update()
@@ -27,9 +31,7 @@ public class StartGame : MonoBehaviour
             {
                 
                 LoadLevel();
-               //flowchart.SetBooleanVariable("loadLevel", false);
-
-            
+                
                 // Set the flag to true so the scene is only loaded once
                 sceneLoaded = true;
             }
@@ -42,7 +44,16 @@ public class StartGame : MonoBehaviour
     
     public void LoadLevel()
     {
-        SceneManager.LoadScene("Home");
+        //SceneManager.LoadScene("Home");
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+    }
+    
+    IEnumerator LoadLevel(int index)
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(index);
+        GetComponent<SerialScript>().StopThread();
     }
 
     void ErrorNoise()
