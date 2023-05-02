@@ -96,4 +96,8 @@ public class SerialScript : MonoBehaviour
         serialPort.Close();
         t.Abort();
     }
+    
+    
+    
+    /*  */
 }

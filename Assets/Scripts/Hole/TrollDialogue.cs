@@ -28,10 +28,9 @@ public class TrollDialogue : MonoBehaviour
     
     private float speechBubbleAnimationDelay = 0.6f;
     
-    public KeyCode interactKey = KeyCode.E; // The key the player needs to press to interact
     private bool inTriggerZone = false; // Whether the player is in the trigger zone
     
-    private void OnTriggerEnter2D(Collider2D other)
+    /*private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
@@ -47,7 +46,7 @@ public class TrollDialogue : MonoBehaviour
             inTriggerZone = false;
             //interactText.gameObject.SetActive(false);
         }
-    }
+    }*/
     
     void Start()
     {
@@ -57,7 +56,7 @@ public class TrollDialogue : MonoBehaviour
 
     void Update()
     {
-        if (inTriggerZone && Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             StartCoroutine(StartDialogue());
         }

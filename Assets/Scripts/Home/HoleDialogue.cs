@@ -284,7 +284,7 @@ public class HoleDialogue : MonoBehaviour
         SceneManager.LoadScene("InsideHole");
         /*brotherYesButton.SetActive(false);
         brotherNoButton.SetActive(false); */
-        Debug.Log("'trying to enter hole '");
+        //Debug.Log("'trying to enter hole '");
     }
     
     public void SisterEnterHole(){

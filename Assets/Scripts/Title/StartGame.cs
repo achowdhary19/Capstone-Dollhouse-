@@ -18,9 +18,12 @@ public class StartGame : MonoBehaviour
 
     public float transitionTime = 1f;
 
+    
+
     void Start()
     {
-        
+        GameObject obj = AccessHomeObject.specialLevelLoader;
+
     }
 
     void Update()
@@ -51,7 +54,9 @@ public class StartGame : MonoBehaviour
     IEnumerator LoadLevel(int index)
     {
         transition.SetTrigger("Start");
+        
         yield return new WaitForSeconds(transitionTime);
+       
         SceneManager.LoadScene(index);
         GetComponent<SerialScript>().StopThread();
     }

@@ -18,7 +18,8 @@ public class PointClickSpawn : MonoBehaviour
     public float scaleRatio; 
     public float speed;
 
-    public Animator animator; 
+    public Animator MomAnimator;
+    public Animator SisAnimator; 
 
     
     private NavMeshAgent agent;
@@ -36,6 +37,7 @@ public class PointClickSpawn : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
+        //to do if sister get this animator if not gett this one. 
         animator = GetComponent<Animator>(); 
         ChangeSprite();
     }
