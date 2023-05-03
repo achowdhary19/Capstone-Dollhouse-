@@ -28,7 +28,6 @@ public class TrollDialogue : MonoBehaviour
     
     private float speechBubbleAnimationDelay = 0.6f;
     
-    private bool inTriggerZone = false; // Whether the player is in the trigger zone
     
     /*private void OnTriggerEnter2D(Collider2D other)
     {

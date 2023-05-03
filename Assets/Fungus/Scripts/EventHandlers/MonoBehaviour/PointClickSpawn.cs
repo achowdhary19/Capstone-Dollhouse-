@@ -18,7 +18,7 @@ public class PointClickSpawn : MonoBehaviour
     public float scaleRatio; 
     public float speed;
 
-    public Animator MomAnimator;
+    public Animator animator;
     public Animator SisAnimator; 
 
     

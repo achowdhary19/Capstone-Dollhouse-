@@ -25,6 +25,7 @@ public class Target : MonoBehaviour
     public float speed;
 
     public Animator animator; 
+    public Animator SisterAnimator; 
 
     private NavMeshAgent agent;
 
@@ -40,7 +41,16 @@ public class Target : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        animator = GetComponent<Animator>(); 
+        if (SerialScript.Instance.PlayerName == "Mom")
+        {
+            animator = GetComponent<Animator>();
+        }
+        
+        else if (SerialScript.Instance.PlayerName == "Sister")
+        {
+            animator = SisterAnimator; 
+        }
+
         spriteRenderer = GetComponent<SpriteRenderer>(); 
     }
 

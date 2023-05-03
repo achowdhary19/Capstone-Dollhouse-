@@ -47,8 +47,8 @@ public class SpawnPlayer : MonoBehaviour
             {
                 spriteRenderer.sprite = momSprite;
                 flowchart.SetBooleanVariable("isMom", true);
-                bool isMom = flowchart.GetBooleanVariable("isMom");
-                Debug.Log("this is mom sprite an mom variable flowchart is " + isMom);
+                //bool isMom = flowchart.GetBooleanVariable("isMom");
+              //  Debug.Log("this is mom sprite an mom variable flowchart is " + isMom);
             }
         
             else if (SerialScript.Instance.PlayerName == "Brother")

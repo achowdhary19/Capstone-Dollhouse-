@@ -11,10 +11,11 @@ public class LevelLoader : MonoBehaviour
     
     public Animator transition;
     public float transitionTime = 0f;
+    public int levelToGoTo; 
     
     public void LoadNextLevel()
     {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1 ));
+        StartCoroutine(LoadLevel(levelToGoTo));
     }
     
     IEnumerator LoadLevel(int index)

@@ -288,7 +288,7 @@ public class HoleDialogue : MonoBehaviour
     }
     
     public void SisterEnterHole(){
-        SceneManager.LoadScene("HoleTroll");
+        SceneManager.LoadScene("Troll");
         brotherYesButton.SetActive(false);
         brotherNoButton.SetActive(false); 
     }
