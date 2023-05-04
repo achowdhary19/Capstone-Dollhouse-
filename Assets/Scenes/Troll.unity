@@ -268,6 +268,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 034940f899c1f4eb0b60f65e7c8dfbe5, type: 3}
+--- !u!1 &12748741 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2976906281380352388, guid: 034940f899c1f4eb0b60f65e7c8dfbe5, type: 3}
+  m_PrefabInstance: {fileID: 12748740}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &12748742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12748741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abb945afd8b14a018fc4466ee20f9d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &58988954
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,6 +1193,10 @@ PrefabInstance:
       propertyPath: m_BaseOffset
       value: 0.87
       objectReference: {fileID: 0}
+    - target: {fileID: 6624766309682435203, guid: 820d174a50f214b25aab983a6f4a8f3a, type: 3}
+      propertyPath: flowchart
+      value: 
+      objectReference: {fileID: 1295539439}
     - target: {fileID: 6624766309682435206, guid: 820d174a50f214b25aab983a6f4a8f3a, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1437,6 +1458,7 @@ GameObject:
   - component: {fileID: 1295539451}
   - component: {fileID: 1295539450}
   - component: {fileID: 1295539449}
+  - component: {fileID: 1295539453}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1568,11 +1590,10 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 1295539452}
-  selectedCommands:
-  - {fileID: 1295539449}
-  variables: []
+  selectedBlocks: []
+  selectedCommands: []
+  variables:
+  - {fileID: 1295539453}
   description: 
   stepPause: 0
   colorCommands: 1
@@ -1882,6 +1903,21 @@ MonoBehaviour:
   - {fileID: 1295539450}
   - {fileID: 1295539449}
   suppressAllAutoSelections: 0
+--- !u!114 &1295539453
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295539434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 1
+  key: isSister
+  value: 0
 --- !u!1 &1309438573
 GameObject:
   m_ObjectHideFlags: 0

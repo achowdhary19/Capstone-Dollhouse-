@@ -24,8 +24,8 @@ public class Target : MonoBehaviour
     public float scaleRatio; 
     public float speed;
 
-    public Animator animator; 
-    public Animator SisterAnimator; 
+    /*public Animator animator; 
+    public Animator SisterAnimator; */
 
     private NavMeshAgent agent;
 
@@ -41,7 +41,7 @@ public class Target : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        if (SerialScript.Instance.PlayerName == "Mom")
+        /*if (SerialScript.Instance.PlayerName == "Mom")
         {
             animator = GetComponent<Animator>();
         }
@@ -49,7 +49,7 @@ public class Target : MonoBehaviour
         else if (SerialScript.Instance.PlayerName == "Sister")
         {
             animator = SisterAnimator; 
-        }
+        }*/
 
         spriteRenderer = GetComponent<SpriteRenderer>(); 
     }
@@ -66,20 +66,20 @@ public class Target : MonoBehaviour
             }
 
             agent.SetDestination(new Vector3(followSpot.x, followSpot.y, transform.position.z));
-            UpdateAnimation();
+           // UpdateAnimation();
         }
         AdjustSortingLayer();
         //AdjustPerspective();
     }
     
 
-    private void UpdateAnimation()
+    /*private void UpdateAnimation()
     {
         //Determines the angle between where we clicked on the screen and our player 
         Vector3 direction = transform.position - new Vector3(followSpot.x, followSpot.y, transform.position.z);
         float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
         animator.SetFloat("angle", angle);
-    }
+    }*/
 
     /*private void OnCollisionStay2D(Collision2D collision)
     {

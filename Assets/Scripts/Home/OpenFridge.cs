@@ -61,6 +61,16 @@ public class OpenFridge : MonoBehaviour
                     flowchart.SetBooleanVariable("stoveOpen", true);
                 }
                 
+                if (gameObject.name == "Toilet")
+                {
+                    flowchart.SetBooleanVariable("toiletOpen", true);
+                }
+                
+                if (gameObject.name == "Shower")
+                {
+                    flowchart.SetBooleanVariable("showerOpen", true);
+                }
+                
                 if (gameObject.name == "Cabinet")
                 {
                     flowchart.SetBooleanVariable("cabinetOpen", true);
@@ -113,6 +123,15 @@ public class OpenFridge : MonoBehaviour
             if (gameObject.name == "Stove")
             {
                 flowchart.SetBooleanVariable("stoveOpen", false);
+            }
+            if (gameObject.name == "Toilet")
+            {
+                flowchart.SetBooleanVariable("toiletOpen", false);
+            }
+            
+            if (gameObject.name == "Shower")
+            {
+                flowchart.SetBooleanVariable("showerOpen", false);
             }
             
             if (gameObject.name == "Cabinet")

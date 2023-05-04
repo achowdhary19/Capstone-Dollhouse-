@@ -39,7 +39,7 @@ public class SerialScript : MonoBehaviour
     void Start()
     {
         //sometimes this port name needs to be changed /dev/tty.usbmodem14101
-        serialPort = new SerialPort("/dev/tty.usbmodem14201", 9600);
+        serialPort = new SerialPort("/dev/tty.usbmodem142201", 9600);
 
         if (!serialPort.IsOpen)
         {
