@@ -309,6 +309,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 034940f899c1f4eb0b60f65e7c8dfbe5, type: 3}
+--- !u!1 &410509831 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2976906281380352388, guid: 034940f899c1f4eb0b60f65e7c8dfbe5, type: 3}
+  m_PrefabInstance: {fileID: 410509830}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &410509832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410509831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abb945afd8b14a018fc4466ee20f9d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &453741440
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,15 +514,15 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.40250993, y: -3.1489472}
-      - {x: -1.848963, y: -3.0968354}
-      - {x: -7.655715, y: -3.213252}
-      - {x: -8.488077, y: -3.1885083}
-      - {x: -8.908904, y: -4.8933764}
-      - {x: 8.843126, y: -4.88017}
+    - - {x: -0.5329091, y: -3.7725601}
+      - {x: -3.026898, y: -3.7550933}
+      - {x: -7.655715, y: -3.6982841}
+      - {x: -7.64608, y: -3.8370452}
+      - {x: -9.297185, y: -4.7786694}
+      - {x: 8.499006, y: -4.70811}
       - {x: 8.760077, y: -3.91685}
-      - {x: 7.9944954, y: -3.21696}
-      - {x: 6.376548, y: -3.0742953}
+      - {x: 7.89056, y: -3.701992}
+      - {x: 5.475774, y: -3.697908}
 --- !u!483693784 &758805408
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -1264,7 +1281,7 @@ MonoBehaviour:
   clickEnabled: 1
   hoverCursor: {fileID: 0}
   useEventSystem: 1
-  activateDistance: 1
+  activateDistance: 0.5
 --- !u!1 &1361111588
 GameObject:
   m_ObjectHideFlags: 0
@@ -1524,6 +1541,7 @@ GameObject:
   - component: {fileID: 1667512700}
   - component: {fileID: 1667512699}
   - component: {fileID: 1667512698}
+  - component: {fileID: 1667512702}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1533,7 +1551,7 @@ GameObject:
   m_IsActive: 1
 --- !u!114 &1667512698
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1545,8 +1563,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 1667512699}
   suppressBlockAutoSelect: 0
-  clickableObject: {fileID: 0}
-  waitFrames: 1
+  clickableObject: {fileID: 1271723117}
+  waitFrames: 0
 --- !u!114 &1667512699
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1563,15 +1581,16 @@ MonoBehaviour:
     serializedVersion: 2
     x: 196
     y: 107
-    width: 111
+    width: 126
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 0
-  blockName: New Block
+  blockName: TakeMeBack
   description: 
   eventHandler: {fileID: 1667512698}
-  commandList: []
+  commandList:
+  - {fileID: 1667512702}
   suppressAllAutoSelections: 0
 --- !u!114 &1667512700
 MonoBehaviour:
@@ -1626,6 +1645,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1667512702
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667512697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 1
+  indentLevel: 0
+  targetObject: {fileID: 1271723112}
+  methodName: LoadLevel
+  delay: 0
 --- !u!1 &1677740731
 GameObject:
   m_ObjectHideFlags: 0

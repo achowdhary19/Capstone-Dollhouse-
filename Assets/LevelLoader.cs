@@ -7,11 +7,18 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
-    //LOAD TITLE TO HOME 
-    
     public Animator transition;
     public float transitionTime = 0f;
     public int levelToGoTo; 
+    
+    void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.S))
+        {
+            Time.timeScale = 1f;
+            SwitchScene();
+        }
+    }
     
     public void LoadNextLevel()
     {
@@ -25,17 +32,12 @@ public class LevelLoader : MonoBehaviour
         SceneManager.LoadScene(index);
     }
     
-    /*public void EnterScene()
+    //emergency switch to home scene 
+    public void SwitchScene()
     {
-        StartCoroutine(WaitForTransition(sceneName));
+        SceneManager.LoadScene(1); 
     }
     
+   
     
-    IEnumerator WaitForTransition( string name)
-    {
-        yield return new WaitForSeconds(transitionTime);
-        transition.SetTrigger("Start");
-        SceneManager.LoadScene(this.sceneName);
-
-    }*/
 }
