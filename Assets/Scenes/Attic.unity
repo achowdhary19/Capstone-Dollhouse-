@@ -3415,6 +3415,10 @@ PrefabInstance:
       propertyPath: m_BaseOffset
       value: 0.87
       objectReference: {fileID: 0}
+    - target: {fileID: 6624766309682435203, guid: 820d174a50f214b25aab983a6f4a8f3a, type: 3}
+      propertyPath: flowchart
+      value: 
+      objectReference: {fileID: 1295539439}
     - target: {fileID: 6624766309682435206, guid: 820d174a50f214b25aab983a6f4a8f3a, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -3822,6 +3826,7 @@ GameObject:
   - component: {fileID: 1286273425}
   - component: {fileID: 1286273424}
   - component: {fileID: 1286273423}
+  - component: {fileID: 1286273426}
   m_Layer: 0
   m_Name: EXITATTIC
   m_TagString: Untagged
@@ -3859,7 +3864,7 @@ MonoBehaviour:
   clickEnabled: 1
   hoverCursor: {fileID: 0}
   useEventSystem: 1
-  activateDistance: 1
+  activateDistance: 2
 --- !u!61 &1286273424
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3938,6 +3943,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1286273426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286273421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1502adbaf9666429da23d8bede4d0202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1295539434
 GameObject:
   m_ObjectHideFlags: 0
@@ -3959,6 +3976,8 @@ GameObject:
   - component: {fileID: 1295539447}
   - component: {fileID: 1295539446}
   - component: {fileID: 1295539445}
+  - component: {fileID: 1295539448}
+  - component: {fileID: 1295539449}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -4087,9 +4106,10 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1295539436}
+  - {fileID: 1295539447}
   selectedCommands: []
-  variables: []
+  variables:
+  - {fileID: 1295539449}
   description: 
   stepPause: 0
   colorCommands: 1
@@ -4221,8 +4241,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 7
   indentLevel: 0
-  targetObject: {fileID: 1775293987}
-  methodName: LoadNextLevel
+  targetObject: {fileID: 1286273421}
+  methodName: LoadLevel
   delay: 0
 --- !u!114 &1295539446
 MonoBehaviour:
@@ -4254,8 +4274,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 237
-    y: 359.5
+    x: 152
+    y: 261.5
     width: 128
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -4266,7 +4286,44 @@ MonoBehaviour:
   eventHandler: {fileID: 1295539446}
   commandList:
   - {fileID: 1295539445}
+  - {fileID: 1295539448}
   suppressAllAutoSelections: 0
+--- !u!114 &1295539448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295539434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 8
+  indentLevel: 0
+  targetFlowchart: {fileID: 1295539439}
+  targetBlock: {fileID: 1295539435}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 0
+  callMode: 0
+--- !u!114 &1295539449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295539434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d02d9822eec54c98afe95bb497211b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scope: 1
+  key: isDad
+  value: 0
 --- !u!1 &1305884594
 GameObject:
   m_ObjectHideFlags: 0
